@@ -1,0 +1,105 @@
+// Zmienne
+$primary-color: #3498db;  // Kolor główny (niebieski)
+$secondary-color: #2ecc71;  // Kolor pomocniczy (zielony)
+$text-color: #333;  // Kolor tekstu
+
+// Style bazowe
+body {
+    font-family: Arial, sans-serif;  // Ustawienie czcionki
+    line-height: 1.6;  // Wysokość linii
+    margin: 0;  // Usunięcie marginesów
+    color: $text-color;  // Kolor tekstu
+    background-color: #f4f4f4;  // Tło strony (jasnoszare)
+}
+
+/* Kontener główny - ogranicza szerokość strony */
+.container {
+    width: 90%;  // Szerokość kontenera na 90% ekranu
+    max-width: 1200px;  // Maksymalna szerokość kontenera
+    margin: 0 auto;  // Wyśrodkowanie kontenera
+}
+
+/* Nagłówek */
+.header {
+    background: $primary-color;  // Tło nagłówka (kolor niebieski)
+    color: white;  // Kolor tekstu (biały)
+    padding: 1rem 0;  // Padding (odstępy wewnętrzne)
+    
+    .nav {
+        list-style: none;  // Usunięcie punktów z listy
+        display: flex;  // Użycie flexboxa
+        justify-content: space-around;  // Rozłożenie elementów na całej szerokości
+        padding: 0;  // Usunięcie paddingu
+        margin: 0;  // Usunięcie marginesu
+
+        li a {
+            color: white;  // Kolor linków (biały)
+            text-decoration: none;  // Usunięcie podkreślenia
+            font-weight: bold;  // Pogrubienie tekstu
+            padding: 0.5rem 1rem;  // Padding wokół linków
+            display: block;  // Umożliwienie kliknięcia całego obszaru
+        }
+    }
+}
+
+/* Sekcje strony (O nas, Usługi) */
+.about, .services {
+    padding: 2rem 0;  // Padding góra/dół
+
+    h2 {
+        text-align: center;  // Wyrównanie tekstu do środka
+        margin-bottom: 1rem;  // Odstęp poniżej nagłówka
+        color: $primary-color;  // Kolor tekstu nagłówka (niebieski)
+    }
+}
+
+.services ul {
+    list-style: none;  // Usunięcie punktów z listy
+    display: flex;  // Użycie flexboxa
+    justify-content: space-around;  // Rozłożenie elementów na całej szerokości
+    padding: 0;  // Usunięcie paddingu
+}
+
+.services li {
+    background: $secondary-color;  // Tło dla elementu listy (kolor zielony)
+    color: white;  // Kolor tekstu (biały)
+    padding: 1rem;  // Padding wewnętrzny
+    border-radius: 5px;  // Zaokrąglenie rogów
+    margin: 0.5rem;  // Odstęp między elementami
+    text-align: center;  // Wyrównanie tekstu do środka
+    width: 30%;  // Szerokość dla każdego elementu
+    box-sizing: border-box;  // Upewnienie się, że padding nie wpływa na szerokość elementu
+}
+
+/* Stopka */
+.footer {
+    background: $text-color;  // Tło stopki (ciemnoszare)
+    color: white;  // Kolor tekstu (biały)
+    text-align: center;  // Wyrównanie tekstu do środka
+    padding: 1rem 0;  // Padding góra/dół
+}
+
+/* Responsywność (RWD) */
+@media (max-width: 768px) {
+    /* Zmiana układu na urządzeniach o szerokości mniejszej niż 768px */
+    
+    .header .nav {
+        flex-direction: column;  // Przekształcenie menu w kolumnę
+        align-items: center;  // Wyśrodkowanie elementów
+    }
+    
+    .services ul {
+        flex-direction: column;  // Zmiana kierunku układu na kolumnowy
+        align-items: center;  // Wyśrodkowanie elementów
+    }
+
+    .services li {
+        width: 80%;  // Zwiększenie szerokości elementów na urządzeniach mobilnych
+        margin-bottom: 1rem;  // Odstęp między elementami w liście
+    }
+    
+    .container {
+        width: 100%;  // Ustawienie kontenera na pełną szerokość
+        padding: 0 1rem;  // Padding boczny
+    }
+}
